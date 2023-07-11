@@ -121,3 +121,8 @@ public void SmallChange() {
 		ScalesSolution.set(index, 0);
 	}
 ```
+
+<h2> Basic Hill-Climbing </h2>
+<p> The basic hill-climbing algorithm will form the crux of the other hill climbing algorithms. The algorithm starts at a random point in the solution space (so in our example, we would randomly generate a solution) and attempts to iteratively make small changes and find a more optimal solution. The drawback with this algorithm however is that solutions are confined to local optima - consider a one dimensional solution space where a peak is surrounded by other peaks - the basic hill-climbing algorithm cannot escape the surrounding peaks as they will only capture values that give a better fitness.</p>
+
+![](https://github.com/Affiq/Heuristics/blob/main/Images/LocalOptima.png)
