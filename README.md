@@ -126,3 +126,13 @@ public void SmallChange() {
 <p> The basic hill-climbing algorithm will form the crux of the other hill climbing algorithms. The algorithm starts at a random point in the solution space (so in our example, we would randomly generate a solution) and attempts to iteratively make small changes and find a more optimal solution. The drawback with this algorithm however is that solutions are confined to local optima - consider a one dimensional solution space where a peak is surrounded by other peaks - the basic hill-climbing algorithm cannot escape the surrounding peaks as they will only capture values that give a better fitness.</p>
 
 ![](https://github.com/Affiq/Heuristics/blob/main/Images/LocalOptima.png)
+
+<h2> Random Restart Hill-Climbing </h2>
+<p> The random-restart hill climbing algorithm performs the exact same steps as the previous hill climbing-algorithm, except it performs the hill-climbing algorithm numerous times so that the initial random point is spread out over the solution space. This essentially allows the algorithm to explore outside the first local optima and in the given example, will have a higher chance of finding better optimas and potentially the global optima. However, consider the next example, in which the probability of landing in the global optimum is very low. </p>
+
+![](https://github.com/Affiq/Heuristics/blob/main/Images/TrappedGlobalOptima.png)
+
+<p> Due to the very narrow space that the global optima resides in, the probability of achieving the global optima using the random hill-climb is low. Likewise, the surrounding peaks prevent the algorithm from converging towards the global-optima due to the descent of the fitness. In such cases, heuristics where the algorithm can search a solution space while ignoring a descent in the fitness needs to be considered to solve problems with slightly complex solution spaces. </p>
+
+<h2> Simulated Annealing </h2>
+<p> Simulated annealing reflects an aspect of nature. Consider a piece of metal with high temperature, it is malleable and can be bent more but as it cools down, the metal starts to become more rigid and refuses to bend more. SA adapts the same principle - at higher temperatures (or earlier iterations of SA depending on perspective), the algorithm has a higher probability of changing the solution [x], even if it results in a worse fitness score [f(x)], but as iterations continue, temperature lowers and the probability of the algorithm accepting solutions with worse fitness decreases dramatically. This built-in logic of accepting worse fitness values is the approach needed to escape local optimas and essentially allow the algorithm to 'climb down' the peaks - allowing us to find the latent global optima in our previous example. </p>
